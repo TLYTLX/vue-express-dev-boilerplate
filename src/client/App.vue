@@ -3,17 +3,18 @@
 </style>
 <template>
   <div class="app full-height">
-    <h1>{{ message }}</h1>
-    <router-link :to="{ name: 'hello' }">Goto Hello</router-link>
-    <router-view></router-view>
+    <Home></Home>
   </div>
 </template>
 <script>
+import Home from './components/home.vue'
 export default {
   data() {
     return {
-      message: 'Express + Vue boilerplate-Konata9'
     }
-  }
+  },
+  components: {
+      Home
+    },
 }
 </script>

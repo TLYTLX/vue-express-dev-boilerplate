@@ -1,73 +1,124 @@
 <template>
 	<div>
-		<Header></Header>
-        <div id="range"></div>
-        <div id="filter"></div>
+		<Header title="新鲜事"></Header>
+        <Search type="news"></Search>
+        <div id="main">
+        	<div class="mainleft">
+        		<div class="news" v-for="i in 20">
+        			<router-link to="/post" class="news-title">附件是第三方接口来得深刻理解反对犯得上大师傅大师傅即使对方开具收费的</router-link>
+        			<div style="display: flex">
+            			<div class="news-content" style="-webkit-box-orient: vertical;">附件是第三方接口来得深刻理解反对犯得上大师傅大师傅即使对方开具收费的附件是第三方接口来得深刻理解反对犯得上大师傅大师傅即使对方开具收费的附件是第三fdsdsffjklskjsdjsjdksadfjkdsfkjfdskjdsfkjdskjds方接口来得深刻理解反对犯得上大师傅大师傅即使对方开具收费的</div>
+            			<div class="news-like">
+            				<img src="../static/like.png" style="width: 40px;display:block;margin: 10px auto;">
+            			345</div>
+            			<div class="news-like">
+            				<div style="margin: 20px auto;">回复</div>
+            			345</div>
+            		</div>
+        		</div>
+        	</div>
+        	<div class="mainright">
+        		<div class="range-title">月度热赞榜</div>
+        		<div class="range-one" v-for="i in 10">
+        			<div class="range-text">{{i}}.反倒是艰苦大师傅但是看了士范德萨范德萨可适当放宽吉林省士大夫犯得上大夫急口令方式</div>
+        			<div style="white-space:nowrap">2018-3-24</div>
+        		</div>
+        	</div>
+        </div>
+        <Footer></Footer>
     </div>
 </template>
-<!--远程登陆密码800941-->
-<!--账号root密码Lsy642977047<<-->
 <script>
+import Search from './search.vue';
 import Header from './header.vue';
+import Footer from './footer.vue';
 export default {
   data() {
     return {
     }
   },
   components: {
-  	Header
+  	Header,
+  	Footer,
+  	Search
   }
 }
 </script>
 
 <style>
 	body{
-		background: #f4f4f4;
+		background: #f7f9fb;
 		margin:0;
 	}
-	#banner{
-		height: 400px;
-		justify-content: center;
-        width: 100%;
-        align-items: flex-end;
-		background: center center url('../static/banner2.jpg') no-repeat;
-		background-size: cover;
+	#main{
+		margin-top: 40px;
+	}
+	.mainleft{
+		margin-left: 30px;
+		width: 60%;
+		display: inline-block;
+	}
+	.mainright{
+		vertical-align: top;
+		margin-left: 4%;
+		display: inline-block;
+		width: 32%;
+		border: 1px solid #aaa;
+		background: #fff;
+	}
+	.news-title {
+		color: #73bab2;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		margin-bottom: 10px;
+		font-size: 17px;
+	}
+	.news-title:hover {
+		cursor: pointer;
+		font-size: 18px;
+	}
+	.news-content {
+		border: 1px solid #bbb;
+		background: #f5f5f5;
+		width: 70%;
+		text-indent:30px;
+		line-height: 1.7rem;
+		padding: 10px;
+		-webkit-box-orient: vertical;
+		text-align: left;
+		display: -webkit-box;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        margin-bottom: 20px;
+	}
+	.news-like {
+		border: 1px solid #bbb;
+		background: #f5f5f5;
+		width: 90px;
+		height: 90px;
+		margin-left: 30px;
+		text-align: center;
+	}
+	.range-title {
+		background: #73BAB2;
+		color: #fff;
+		text-align: center;
+        line-height: 35px;
+	}
+	.range-one {
+		line-height: 35px;
+		padding: 5px 10px;
 		display: flex;
 	}
-	.banner-font{
-		width: 15%;
-		height: 55px;
-		justify-content: center;
-		position: relative;
-		color: #fff;  
-        font-size: 32px; 
-        text-align: center;
-        cursor: pointer;
+	.range-one:hover {
+		cursor: pointer;
+		color: #73bab2;
 	}
-	.banner-font:hover {
-	    height:60px;
-	}
-    .banner-font:hover::before { 
-    	content: "/";
-    	left: 0px;
-    	position: absolute;
-    	font-weight: lighter;
-    } 
-    .banner-font:hover::after { 
-    	content: "/";
-    	right:  0px;
-    	position: absolute;
-    	font-weight: lighter;
-    }
-	.banner-font img{
-		width: auto;
-		height: 40px;
-	}
-	#footer{
-		height: 50px;
-		width: 100%;
-		margin-top: 50px;
-		background: #e6e7ea;
-		border-top: 1px solid #e5e5e5; 
+	.range-text {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		margin-right: 5px;
 	}
 </style>

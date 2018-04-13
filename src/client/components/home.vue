@@ -1,9 +1,12 @@
 <template>
 	<div>
+		<Header></Header>
         <div id="banner">
-        	<div class="banner-font"><img src="../static/sale.png"></div>
+        	<router-link to="/sale" class="banner-font"><img src="../static/sale.png"></router-link>
         	<div class="banner-font"><img src="../static/anonymous.png"></div>
-        	<div class="banner-font"><img src="../static/news.png"></div>
+        	<router-link to="/news" class="banner-font">
+        		<img src="../static/news.png">
+        	</router-link>
         	<div class="banner-font"><img src="../static/profess.png"></div>
         	<div class="banner-font"><img src="../static/rent.png"></div>
         	<div class="banner-font"><img src="../static/date.png"></div>
@@ -33,23 +36,29 @@
             <div class="block2" style="background: #e9e6ea"></div>
             <div class="block2" style="background: #eae6e7"></div>
         </div>
-        <div id="footer"></div>
+        <Footer></Footer>
     </div>
 </template>
 <!--远程登陆密码800941-->
 <!--账号root密码Lsy642977047<<-->
 <script>
+import Header from './header.vue';
+import Footer from './footer.vue';
 export default {
   data() {
     return {
     }
-  }
+  },
+  components: {
+    Header,
+    Footer
+  },
 }
 </script>
 
 <style>
 	body{
-		background: #f4f4f4;
+		background: #f7f9fb;
 		margin:0;
 	}
 	#banner{
@@ -89,13 +98,6 @@ export default {
 	.banner-font img{
 		width: auto;
 		height: 40px;
-	}
-	#footer{
-		height: 50px;
-		width: 100%;
-		margin-top: 50px;
-		background: #e6e7ea;
-		border-top: 1px solid #e5e5e5; 
 	}
 	.para{
 		display: flex;
